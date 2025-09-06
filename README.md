@@ -1,9 +1,9 @@
 # 業務改善システム自動具体化ツール
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![React](https://img.shields.io/badge/React-18-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
-![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AA-green)
+![React](https://img.shields.io/badge/React-18-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
+![Accessibility](https://img.shields.io/badge/WCAG-2.1__AA-green.svg)
 
 ## 📋 概要
 
@@ -54,10 +54,10 @@ npm run dev
 ```mermaid
 graph TD
     A[ツール起動] --> B[15問ウィザード開始]
-    B --> C[Layer 1: 目的・目標<br/>5問回答]
-    C --> D[Layer 2: プロセス・関係者<br/>5問回答]
-    D --> E[Layer 3: 技術・統合<br/>5問回答]
-    E --> F[/specify コマンド生成]
+    B --> C["Layer 1: 目的・目標|5問回答"]
+    C --> D["Layer 2: プロセス・関係者|5問回答"]
+    D --> E["Layer 3: 技術・統合|5問回答"]
+    E --> F["specifyコマンド生成"]
     F --> G[GitHub spec-kitに貼り付け]
     G --> H[AI実装フェーズ]
     
