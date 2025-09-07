@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "WebFetch(domain:img.shields.io)",
+      "Bash(git add:*)",
+      "Bash(git merge:*)",
+      "Bash(git push:*)",
+      "mcp__serena__list_dir",
+      "Bash(npm run dev:*)",
+      "mcp__serena__find_file",
+      "Read(//Users/bl32543/Git/spec-form-private/**)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "serena"
+  ]
+}

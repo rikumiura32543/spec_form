@@ -44,7 +44,7 @@ const WIZARD_QUESTIONS: QuestionData[] = [
     placeholder: '',
     type: 'single-choice',
     required: true,
-    options: ['10万円以下', '10-50万円', '50-100万円', '100万円以上', '未定']
+    options: ['10万円以下', '10-50万円', '50-100万円', '100万円以上', '予算は未定']
   },
   {
     id: 'priority',
@@ -84,7 +84,7 @@ const WIZARD_QUESTIONS: QuestionData[] = [
     placeholder: '',
     type: 'multiple-choice',
     required: true,
-    options: ['人事・労務', '営業', '開発', '管理', 'その他']
+    options: ['営業部', '経理部', '人事部', '総務部', 'IT部', 'その他']
   },
   {
     id: 'frequency',
@@ -109,7 +109,7 @@ const WIZARD_QUESTIONS: QuestionData[] = [
     placeholder: '',
     type: 'multiple-choice',
     required: true,
-    options: ['スプレッドシート', 'スライド', 'ドキュメント', 'Google Drive', 'その他']
+    options: ['Excel/CSV', 'PDF', 'データベース', 'API連携', 'その他']
   },
   {
     id: 'technical_skill',
@@ -117,7 +117,7 @@ const WIZARD_QUESTIONS: QuestionData[] = [
     placeholder: '',
     type: 'single-choice',
     required: true,
-    options: ['基本的なPC操作のみ', 'Google Workspaceは使える', '簡単なツール設定可能', 'プログラミング経験あり', '技術チームがいる']
+    options: ['基本的なPC操作のみ', 'Excel関数は使える', '簡単なツール設定可能', 'プログラミング経験あり', '技術チームがいる']
   },
   {
     id: 'integration_needs',
