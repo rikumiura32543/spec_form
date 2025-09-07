@@ -3,8 +3,6 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
-  AccessibilityFocusManager,
-  ScreenReaderAnnouncer,
   HighContrastDetector,
   ReducedMotionDetector,
   focusManager,
@@ -519,7 +517,7 @@ export function useAccessibility({
     a11yState.isHighContrast || 
     a11yState.isReducedMotion || 
     a11yState.screenReaderActive || 
-    preferences?.accessibilityMode;
+    Boolean(preferences?.accessibilityMode);
   
   return {
     // State

@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(link.getAttribute('href') as string);
       if (target) {
         target.setAttribute('tabindex', '-1');
-        target.focus();
+        (target as HTMLElement).focus();
         target.addEventListener('blur', () => {
           target.removeAttribute('tabindex');
         }, { once: true });

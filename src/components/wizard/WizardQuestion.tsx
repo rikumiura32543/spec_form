@@ -36,7 +36,7 @@ const WizardQuestion: React.FC<WizardQuestionProps> = ({
             onChange={(e) => onChange(e.target.value)}
             placeholder={question.placeholder}
             required={question.required}
-            error={error ? { message: error } : undefined}
+            error={error ? { field: question.id, message: error, code: 'VALIDATION_ERROR' } : undefined}
             className="w-full"
             aria-describedby={`${question.id}-description`}
           />
@@ -52,7 +52,7 @@ const WizardQuestion: React.FC<WizardQuestionProps> = ({
             placeholder={question.placeholder}
             rows={4}
             required={question.required}
-            error={error ? { message: error } : undefined}
+            error={error ? { field: question.id, message: error, code: 'VALIDATION_ERROR' } : undefined}
             className="w-full"
             aria-describedby={`${question.id}-description`}
           />

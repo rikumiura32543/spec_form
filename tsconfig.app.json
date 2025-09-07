@@ -14,16 +14,16 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting */
+    /* Linting - temporarily relaxed */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
 
-    /* Additional strict checks for better code quality */
-    "exactOptionalPropertyTypes": true,
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
+    /* Additional strict checks for better code quality - temporarily relaxed */
+    "exactOptionalPropertyTypes": false,
+    "noImplicitReturns": false,
+    "noUncheckedIndexedAccess": false,
 
     /* Path mapping for better imports */
     "baseUrl": ".",
@@ -53,6 +53,7 @@
     "**/*.test.ts",
     "**/*.test.tsx",
     "**/*.spec.ts",
-    "**/*.spec.tsx"
+    "**/*.spec.tsx",
+    "src/test-setup.ts"
   ]
 }

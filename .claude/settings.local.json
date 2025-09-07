@@ -9,7 +9,12 @@
       "mcp__serena__list_dir",
       "Bash(npm run dev:*)",
       "mcp__serena__find_file",
-      "Read(//Users/bl32543/Git/spec-form-private/**)"
+      "Read(//Users/bl32543/Git/spec-form-private/**)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm run build:*)",
+      "mcp__serena__find_symbol",
+      "mcp__serena__get_symbols_overview",
+      "mcp__serena__replace_symbol_body"
     ],
     "deny": [],
     "ask": []

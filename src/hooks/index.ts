@@ -3,11 +3,9 @@
 
 // Core wizard hooks
 export { useWizardState } from './useWizardState';
-export type { UseWizardStateOptions, UseWizardStateReturn } from './useWizardState';
 
 // Authentication hooks
 export { useGoogleAuth } from './useGoogleAuth';
-export type { UseGoogleAuthOptions, UseGoogleAuthReturn } from './useGoogleAuth';
 
 // Storage hooks
 export { 
@@ -16,27 +14,19 @@ export {
   useStorageCompliance,
   useLocalStorageState,
 } from './useLocalStorage';
-export type {
-  UseUserPreferencesReturn,
-  UseDraftManagementReturn,
-  UseStorageComplianceReturn,
-} from './useLocalStorage';
 
 // Accessibility hooks
 export { useAccessibility } from './useAccessibility';
-export type { UseAccessibilityOptions, UseAccessibilityReturn } from './useAccessibility';
 
 // Output generation hooks
 export { useOutputGeneration } from './useOutputGeneration';
-export type { OutputGenerationOptions, UseOutputGenerationReturn } from './useOutputGeneration';
 
 // Internationalization hooks
 export { useI18n } from './useI18n';
-export type { UseI18nOptions, UseI18nReturn } from './useI18n';
 
 // Custom utility hooks
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
-import { debounce, throttle } from '../utils';
+import { throttle } from '../utils';
 
 // Debounced value hook
 export function useDebounce<T>(value: T, delay: number): T {
@@ -70,7 +60,7 @@ export function useThrottledCallback<T extends (...args: any[]) => void>(
 
 // Previous value hook
 export function usePrevious<T>(value: T): T | undefined {
-  const ref = useRef<T>();
+  const ref = useRef<T | undefined>(undefined);
   
   useEffect(() => {
     ref.current = value;

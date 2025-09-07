@@ -138,6 +138,11 @@ interface ButtonProps {
 
 ## 🔧 開発時の注意点
 
+### 0. ブランチ運用
+- **開発作業**: 必ずdevelopブランチで実施
+- **mainブランチ**: 本番用のため直接編集禁止
+- **修正手順**: develop → リモートプッシュ → mainにマージ
+
 ### 1. CSS設計
 - **TailwindCSS使用禁止箇所**: デザインシステム色以外
 - **カスタムCSS**: `src/index.css`で一元管理

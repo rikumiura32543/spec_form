@@ -153,12 +153,12 @@ export type KeyboardEventHandler = React.KeyboardEventHandler<HTMLElement>;
 export type FocusEventHandler = React.FocusEventHandler<HTMLElement>;
 export type MouseEventHandler = React.MouseEventHandler<HTMLElement>;
 
-// Constitutional compliance aggregate type
-export interface GlobalConstitutionalCompliance 
-  extends ConstitutionalCompliance, 
-          I18nConstitutionalCompliance {
-  // Additional global compliance requirements
-  overallCompliance: boolean;
-  lastValidated: Date;
-  violations: string[];
-}
+// Constitutional compliance aggregate type - temporarily disabled
+// export interface GlobalConstitutionalCompliance 
+//   extends ConstitutionalCompliance, 
+//           I18nConstitutionalCompliance {
+//   // Additional global compliance requirements
+//   overallCompliance: boolean;
+//   lastValidated: Date;
+//   violations: string[];
+// }

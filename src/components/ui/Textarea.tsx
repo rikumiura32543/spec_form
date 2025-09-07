@@ -6,7 +6,7 @@ import { FormFieldProps } from '../../types';
 import { PIIDetector, debounce } from '../../utils';
 import { useAccessibility } from '../../hooks';
 
-interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'id' | 'name' | 'aria-invalid' | 'required'>, FormFieldProps {
+interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'id' | 'name' | 'aria-invalid' | 'required' | 'disabled'>, FormFieldProps {
   variant?: 'default' | 'filled' | 'outline';
   helperText?: string;
   maxLength?: number;

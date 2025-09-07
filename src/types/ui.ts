@@ -15,8 +15,8 @@ export interface BaseComponentProps {
 // Form component types
 export interface FormFieldProps extends BaseComponentProps {
   id: string;
-  name: string;
-  label: string;
+  name?: string;
+  label?: string;
   description?: string;
   helpText?: string;
   required?: boolean;

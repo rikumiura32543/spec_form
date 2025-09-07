@@ -5,7 +5,7 @@ import React, { forwardRef, ButtonHTMLAttributes } from 'react';
 import { BaseComponentProps } from '../../types';
 import { useAccessibility } from '../../hooks';
 
-interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'className' | 'aria-label'>, BaseComponentProps {
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>, BaseComponentProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger';
   size?: 'small' | 'medium' | 'large';
   type?: 'button' | 'submit' | 'reset';

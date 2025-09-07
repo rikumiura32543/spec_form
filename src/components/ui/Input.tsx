@@ -6,7 +6,7 @@ import { FormFieldProps } from '../../types';
 import { PIIDetector, debounce } from '../../utils';
 import { useAccessibility } from '../../hooks';
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'id' | 'name' | 'aria-invalid' | 'required'>, FormFieldProps {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'id' | 'name' | 'aria-invalid' | 'required' | 'disabled'>, FormFieldProps {
   type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';
   variant?: 'default' | 'filled' | 'outline';
   helperText?: string;

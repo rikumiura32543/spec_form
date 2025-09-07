@@ -36,7 +36,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   'aria-label': ariaLabel,
   'aria-describedby': ariaDescribedBy,
 }) => {
-  const { a11yState, formatNumber } = useAccessibility();
+  const { a11yState } = useAccessibility();
   
   // Normalize value
   const normalizedValue = Math.min(Math.max(0, value), max);
