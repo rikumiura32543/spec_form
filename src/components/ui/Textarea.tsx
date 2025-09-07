@@ -2,11 +2,11 @@
 // T040: Multi-line text input with auto-resize and PII detection
 
 import React, { forwardRef, TextareaHTMLAttributes, useState, useEffect, useCallback, useRef } from 'react';
-import { FormFieldProps, ValidationError } from '../../types';
+import { FormFieldProps } from '../../types';
 import { PIIDetector, debounce } from '../../utils';
 import { useAccessibility } from '../../hooks';
 
-interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'id' | 'name'>, FormFieldProps {
+interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'id' | 'name' | 'aria-invalid' | 'required'>, FormFieldProps {
   variant?: 'default' | 'filled' | 'outline';
   helperText?: string;
   maxLength?: number;
@@ -57,7 +57,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   const [currentValue, setCurrentValue] = useState<string>(
     (value || defaultValue || '') as string
   );
-  const [isFocused, setIsFocused] = useState(false);
+  // Focus state removed - not used in current implementation
   const [piiDetected, setPiiDetected] = useState(false);
   const [piiTypes, setPiiTypes] = useState<string[]>([]);
   const [rows, setRows] = useState(minRows);
@@ -276,13 +276,11 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   
   // Handle focus
   const handleFocus = (event: React.FocusEvent<HTMLTextAreaElement>) => {
-    setIsFocused(true);
     onFocus?.(event);
   };
   
   // Handle blur
   const handleBlur = (event: React.FocusEvent<HTMLTextAreaElement>) => {
-    setIsFocused(false);
     onBlur?.(event);
   };
   

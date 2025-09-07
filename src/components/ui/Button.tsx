@@ -2,10 +2,10 @@
 // T038: Core UI component with WCAG 2.1 AA compliance
 
 import React, { forwardRef, ButtonHTMLAttributes } from 'react';
-import { BaseComponentProps, LoadingState } from '../../types';
+import { BaseComponentProps } from '../../types';
 import { useAccessibility } from '../../hooks';
 
-interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>, BaseComponentProps {
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'className' | 'aria-label'>, BaseComponentProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger';
   size?: 'small' | 'medium' | 'large';
   type?: 'button' | 'submit' | 'reset';
@@ -37,10 +37,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   'aria-describedby': ariaDescribedBy,
   ...props
 }, ref) => {
-  const { a11yState, handleKeyboardNavigation } = useAccessibility();
+  const { handleKeyboardNavigation } = useAccessibility();
   
   // Apply high contrast automatically if detected
-  const shouldUseHighContrast = highContrast || a11yState.isHighContrast;
+  // const shouldUseHighContrast = highContrast || a11yState.isHighContrast;
   
   // ミニマルフラットデザイン - 基本クラス
   const baseClasses = [

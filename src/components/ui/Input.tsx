@@ -2,11 +2,11 @@
 // T039: Form input with validation and PII detection
 
 import React, { forwardRef, InputHTMLAttributes, useState, useEffect, useCallback } from 'react';
-import { FormFieldProps, ValidationError } from '../../types';
+import { FormFieldProps } from '../../types';
 import { PIIDetector, debounce } from '../../utils';
 import { useAccessibility } from '../../hooks';
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'id' | 'name'>, FormFieldProps {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'id' | 'name' | 'aria-invalid' | 'required'>, FormFieldProps {
   type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';
   variant?: 'default' | 'filled' | 'outline';
   helperText?: string;
@@ -58,7 +58,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   const [currentValue, setCurrentValue] = useState<string>(
     (value || defaultValue || '') as string
   );
-  const [isFocused, setIsFocused] = useState(false);
+  // Focus state removed - not used in current implementation
   const [piiDetected, setPiiDetected] = useState(false);
   const [piiTypes, setPiiTypes] = useState<string[]>([]);
   
@@ -221,13 +221,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   
   // Handle focus
   const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
-    setIsFocused(true);
     onFocus?.(event);
   };
   
   // Handle blur
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-    setIsFocused(false);
     onBlur?.(event);
   };
   

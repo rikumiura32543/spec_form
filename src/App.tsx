@@ -2,7 +2,7 @@
 // 業務改善システム自動具体化ツール
 
 import React, { useState } from 'react';
-import { Button, ProgressBar, Card } from './components/ui';
+import { ProgressBar, Card } from './components/ui';
 import { WizardQuestion } from './components/wizard';
 
 interface QuestionData {
@@ -203,6 +203,7 @@ const App: React.FC = () => {
       const timer = setTimeout(saveDraft, 2000); // 2秒後に自動保存
       return () => clearTimeout(timer);
     }
+    return undefined; // useEffectは必ずundefinedまたはcleanup関数を返す必要がある
   }, [answers, currentStep]);
 
   const handleAnswer = (questionId: string, answer: string | string[]) => {
@@ -249,7 +250,8 @@ const App: React.FC = () => {
   };
 
   // 構造化JSON生成
-  const generateStructuredJSON = () => {
+  // 現在は未使用だが将来の機能拡張用に保持
+  /* const generateStructuredJSON = () => {
     return {
       "project": {
         "name": "業務改善システム",
@@ -276,10 +278,11 @@ const App: React.FC = () => {
       },
       "priorities": Array.isArray(answers.priority) ? answers.priority : (answers.priority ? [answers.priority] : [])
     };
-  };
+  }; */
 
   // Markdown仕様書生成
-  const generateMarkdownSpec = () => {
+  // 現在は未使用だが将来の機能拡張用に保持
+  /* const generateMarkdownSpec = () => {
     const json = generateStructuredJSON();
     return `# ${json.project.name}
 
@@ -331,9 +334,16 @@ ${json.technical_requirements.security}
 ---
 *生成日時: ${new Date().toLocaleString('ja-JP')}*
 *このドラフトは24時間保存されます*`;
-  };
+  }; */
 
   const currentQuestion = WIZARD_QUESTIONS[currentStep];
+  
+  // 安全性チェック: currentQuestionが存在しない場合は最初の質問に戻す
+  if (!currentQuestion) {
+    console.error('Current question not found, resetting to step 0');
+    setCurrentStep(0);
+    return null; // 再レンダリングを待つ
+  }
   const progress = ((currentStep + 1) / WIZARD_QUESTIONS.length) * 100;
 
   if (isGenerating) {
@@ -352,8 +362,9 @@ ${json.technical_requirements.security}
 
   if (showResult) {
     const specifyCommand = generateSpecifyCommand();
-    const structuredJSON = generateStructuredJSON();
-    const markdownSpec = generateMarkdownSpec();
+    // 現在は/specifyコマンド形式のみ使用
+    // const structuredJSON = generateStructuredJSON();
+    // const markdownSpec = generateMarkdownSpec();
     
     const copyToClipboard = async (text: string, type: string) => {
       try {
@@ -364,6 +375,8 @@ ${json.technical_requirements.security}
       }
     };
     
+    // ダウンロード機能は現在未使用
+    /*
     const downloadFile = (content: string, filename: string, contentType: string) => {
       const blob = new Blob([content], { type: contentType });
       const url = window.URL.createObjectURL(blob);
@@ -375,6 +388,7 @@ ${json.technical_requirements.security}
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
     };
+    */
     
     return (
       <div style={{backgroundColor: 'var(--color-gray-light)'}} className="min-h-screen py-8">
