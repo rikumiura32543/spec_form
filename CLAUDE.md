@@ -7,6 +7,15 @@
 npm run dev
 ```
 
+アクセスURL: http://localhost:5173/
+
+### ポート指定での起動
+```bash
+npm run dev -- --port 5176
+```
+
+アクセスURL: http://localhost:5176/
+
 ### ビルド
 ```bash
 npm run build
@@ -200,8 +209,41 @@ A: 個人情報保護とシンプリシティを優先。LocalStorageで十分�
 
 ---
 
+## 🛠️ 技術的詳細
+
+### 最新修正内容（v1.0.0）
+- TypeScriptエラー100+ → 0エラーに修正完了
+- React 19.1.1, TypeScript 5.8.3対応
+- Zod validation library完全統合
+- Google OAuth機能実装（開発環境対応）
+- i18n多言語対応システム実装
+- PII検出・バリデーション機能完全実装
+- 全コンポーネントのtype-safety確保
+
+### 依存関係
+```json
+{
+  "react": "^19.1.1",
+  "typescript": "^5.8.3",
+  "vite": "^7.1.2",
+  "tailwindcss": "^3.4.17",
+  "zod": "^3.24.1"
+}
+```
+
+### 型定義追加
+```json
+{
+  "@types/gapi": "^0.0.47",
+  "@types/gapi.auth2": "^0.0.61",
+  "@types/node": "^24.3.1"
+}
+```
+
 **開発者引き継ぎ完了チェックリスト**
-- [ ] `npm run dev` でローカル起動確認
+- [x] `npm run dev` でローカル起動確認
+- [x] TypeScriptエラー0達成確認
+- [x] 本番ビルド成功確認
 - [ ] 15問すべて回答してコマンド生成確認
 - [ ] ブラウザ戻る/進む動作確認
 - [ ] LocalStorage保存/削除確認
