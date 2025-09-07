@@ -1,6 +1,14 @@
 // Google OAuth utilities with constitutional compliance
 // T027: Implement OAuth flow with minimal permissions
 
+// Extend Window interface for Google API
+declare global {
+  interface Window {
+    google?: any;
+    gapi?: any;
+  }
+}
+
 import {
   GoogleAuthConfig,
   AuthResult,
@@ -146,16 +154,16 @@ export class GoogleOAuthManager {
     
     // Determine service from scope
     const scopes = tokenInfo.scope.split(' ');
-    if (scopes.some(s => s.includes('drive'))) {
+    if (scopes.some((s: string) => s.includes('drive'))) {
       this.tokenStorage.store('drive', tokenInfo);
     }
-    if (scopes.some(s => s.includes('gmail'))) {
+    if (scopes.some((s: string) => s.includes('gmail'))) {
       this.tokenStorage.store('gmail', tokenInfo);
     }
-    if (scopes.some(s => s.includes('calendar'))) {
+    if (scopes.some((s: string) => s.includes('calendar'))) {
       this.tokenStorage.store('calendar', tokenInfo);
     }
-    if (scopes.some(s => s.includes('spreadsheets'))) {
+    if (scopes.some((s: string) => s.includes('spreadsheets'))) {
       this.tokenStorage.store('sheets', tokenInfo);
     }
     
@@ -171,10 +179,10 @@ export class GoogleOAuthManager {
   }
   
   private determineServiceFromScopes(scopes: string[]): 'gmail' | 'drive' | 'calendar' | 'sheets' | 'chat' {
-    if (scopes.some(s => s.includes('gmail'))) return 'gmail';
-    if (scopes.some(s => s.includes('drive'))) return 'drive';
-    if (scopes.some(s => s.includes('calendar'))) return 'calendar';
-    if (scopes.some(s => s.includes('spreadsheets'))) return 'sheets';
+    if (scopes.some((s: string) => s.includes('gmail'))) return 'gmail';
+    if (scopes.some((s: string) => s.includes('drive'))) return 'drive';
+    if (scopes.some((s: string) => s.includes('calendar'))) return 'calendar';
+    if (scopes.some((s: string) => s.includes('spreadsheets'))) return 'sheets';
     return 'drive'; // fallback
   }
   
@@ -290,7 +298,7 @@ export class GoogleOAuthManager {
       ...MinimalScopes.SHEETS,
     ];
     
-    const deniedScopes = requestedScopes.filter(scope => !allowedScopes.includes(scope));
+    const deniedScopes = requestedScopes.filter(scope => !allowedScopes.includes(scope as any));
     
     if (deniedScopes.length > 0) {
       throw new ScopeError(
@@ -527,7 +535,7 @@ export class OAuthConstitutionalValidator {
       ...MinimalScopes.SHEETS,
     ];
     
-    return requestedScopes.every(scope => allowedScopes.includes(scope));
+    return requestedScopes.every(scope => allowedScopes.includes(scope as any));
   }
   
   static validateHTTPSOnly(url: string): boolean {

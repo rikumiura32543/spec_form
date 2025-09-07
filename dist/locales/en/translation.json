@@ -1,0 +1,80 @@
+{
+  "common": {
+    "yes": "Yes",
+    "no": "No", 
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "cancel": "Cancel", 
+    "save": "Save",
+    "loading": "Loading...",
+    "error": "Error",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "wizard": {
+    "title": "Business System Specification Generator",
+    "subtitle": "Generate detailed system specifications through a 15-question wizard",
+    "startWizard": "Start Wizard",
+    "continueFromDraft": "Continue from Draft",
+    "progress": "Progress: {{current}}/{{total}}",
+    "layer1": {
+      "title": "Layer 1: Purpose, KPIs & Constraints",
+      "description": "Define the purpose and success metrics for business improvement"
+    },
+    "layer2": {
+      "title": "Layer 2: Process & Stakeholders",
+      "description": "Organize business processes and stakeholders"
+    },
+    "layer3": {
+      "title": "Layer 3: Technology & Integration", 
+      "description": "Define system requirements and external integrations"
+    }
+  },
+  "questions": {
+    "purpose": "What is the main purpose of the business improvement?",
+    "kpi": "Please set measurable KPIs",
+    "constraints": "Please describe any constraints",
+    "successCriteria": "Please describe specific success criteria",
+    "actors": "Who are the main actors (roles/departments)?",
+    "inputData": "What types of input data are involved?",
+    "outputData": "What are the expected outputs/deliverables?",
+    "triggers": "What triggers the process to start?",
+    "asIs": "What are the current (As-Is) challenges?",
+    "toBe": "What is the target (To-Be) state?",
+    "exceptions": "What exception handling is needed?",
+    "ui": "What screens/UI are required?",
+    "automation": "What rules need to be automated?",
+    "googleIntegration": "Is Google Workspace integration needed?",
+    "permissions": "What are the permission requirements?"
+  },
+  "output": {
+    "title": "Generated Results",
+    "summary": "One-Line Summary", 
+    "json": "Structured JSON",
+    "markdown": "Markdown Specification",
+    "copy": "Copy",
+    "download": "Download",
+    "generated": "Generation completed"
+  },
+  "accessibility": {
+    "skipToMain": "Skip to main content",
+    "currentStep": "Current step: {{step}}",
+    "completedStep": "Completed: {{step}}",
+    "pendingStep": "Pending: {{step}}",
+    "fieldRequired": "This field is required",
+    "fieldOptional": "This field is optional",
+    "errorMessage": "Error: {{message}}",
+    "statusUpdate": "Status updated: {{status}}"
+  },
+  "errors": {
+    "required": "This field is required",
+    "minLength": "Please enter at least {{min}} characters",
+    "maxLength": "Please enter no more than {{max}} characters",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidUrl": "Please enter a valid URL",
+    "networkError": "A network error occurred",
+    "storageError": "Failed to save",
+    "validationError": "Please check your input"
+  }
+}

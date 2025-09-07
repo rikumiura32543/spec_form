@@ -360,7 +360,7 @@ export class I18nConstitutionalValidator {
   static validateJapanesePrimary(i18n: I18nManager): boolean {
     // Constitutional requirement: 日本語が主言語
     return i18n.getCurrentLanguage() === 'ja' || 
-           localStorage.getItem('user-preferences')?.includes('"language":"ja"');
+           Boolean(localStorage.getItem('user-preferences')?.includes('"language":"ja"'));
   }
   
   static validateNoAutoTranslation(): boolean {

@@ -325,13 +325,13 @@ export function useGoogleAuth({
   const getRequiredScopes = useCallback((service: 'drive' | 'gmail' | 'sheets' | 'calendar'): string[] => {
     switch (service) {
       case 'drive':
-        return MinimalScopes.DRIVE;
+        return [...MinimalScopes.DRIVE];
       case 'gmail':
-        return MinimalScopes.GMAIL;
+        return [...MinimalScopes.GMAIL];
       case 'sheets':
-        return MinimalScopes.SHEETS;
+        return [...MinimalScopes.SHEETS];
       case 'calendar':
-        return MinimalScopes.CALENDAR;
+        return [...MinimalScopes.CALENDAR];
       default:
         return [];
     }

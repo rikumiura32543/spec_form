@@ -1,0 +1,80 @@
+{
+  "common": {
+    "yes": "はい",
+    "no": "いいえ",
+    "next": "次へ",
+    "previous": "前へ",
+    "submit": "送信",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "required": "必須",
+    "optional": "任意"
+  },
+  "wizard": {
+    "title": "業務改善システム自動具体化ツール",
+    "subtitle": "15問のウィザードで業務システムの仕様を自動生成します",
+    "startWizard": "ウィザードを開始",
+    "continueFromDraft": "下書きから続行",
+    "progress": "進捗: {{current}}/{{total}}",
+    "layer1": {
+      "title": "Layer 1: 目的・KPI・制約",
+      "description": "業務改善の目的と成功指標を定義します"
+    },
+    "layer2": {
+      "title": "Layer 2: プロセス・登場人物", 
+      "description": "業務プロセスと関係者を整理します"
+    },
+    "layer3": {
+      "title": "Layer 3: 技術・連携",
+      "description": "システム要件と外部連携を定義します"
+    }
+  },
+  "questions": {
+    "purpose": "業務改善の主な目的は何ですか？",
+    "kpi": "測定可能なKPIを設定してください",
+    "constraints": "制約条件があれば教えてください",
+    "successCriteria": "成功条件を具体的に記述してください",
+    "actors": "主要な登場人物（役職・部署）を教えてください",
+    "inputData": "入力データの種類を教えてください",
+    "outputData": "出力データ・成果物を教えてください",
+    "triggers": "処理開始のトリガーは何ですか？",
+    "asIs": "現状（As-Is）の課題を教えてください",
+    "toBe": "目標（To-Be）の姿を教えてください",
+    "exceptions": "想定される例外処理を教えてください",
+    "ui": "必要な画面・UIを教えてください",
+    "automation": "自動化したいルールを教えてください",
+    "googleIntegration": "Google Workspaceとの連携が必要ですか？",
+    "permissions": "権限設計の要件を教えてください"
+  },
+  "output": {
+    "title": "生成結果",
+    "summary": "1行サマリー",
+    "json": "構造化JSON",
+    "markdown": "Markdown仕様書",
+    "copy": "コピー",
+    "download": "ダウンロード",
+    "generated": "生成完了しました"
+  },
+  "accessibility": {
+    "skipToMain": "メインコンテンツにスキップ",
+    "currentStep": "現在のステップ: {{step}}",
+    "completedStep": "完了済み: {{step}}",
+    "pendingStep": "未完了: {{step}}",
+    "fieldRequired": "このフィールドは必須です",
+    "fieldOptional": "このフィールドは任意です",
+    "errorMessage": "エラー: {{message}}",
+    "statusUpdate": "状態が更新されました: {{status}}"
+  },
+  "errors": {
+    "required": "この項目は必須です",
+    "minLength": "{{min}}文字以上で入力してください",
+    "maxLength": "{{max}}文字以下で入力してください", 
+    "invalidEmail": "有効なメールアドレスを入力してください",
+    "invalidUrl": "有効なURLを入力してください",
+    "networkError": "ネットワークエラーが発生しました",
+    "storageError": "保存に失敗しました",
+    "validationError": "入力内容を確認してください"
+  }
+}

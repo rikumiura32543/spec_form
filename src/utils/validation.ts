@@ -290,16 +290,17 @@ export class FormValidator {
       switch (question.type) {
         case 'short-text':
         case 'long-text':
-          fieldSchema = z.string();
+          let stringSchema = z.string();
           if (question.minLength) {
-            fieldSchema = fieldSchema.min(question.minLength);
+            stringSchema = stringSchema.min(question.minLength);
           }
           if (question.maxLength) {
-            fieldSchema = fieldSchema.max(question.maxLength);
+            stringSchema = stringSchema.max(question.maxLength);
           }
           if (question.pattern) {
-            fieldSchema = fieldSchema.regex(question.pattern);
+            stringSchema = stringSchema.regex(question.pattern);
           }
+          fieldSchema = stringSchema;
           break;
           
         case 'numeric':
